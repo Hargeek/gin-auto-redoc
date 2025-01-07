@@ -1,3 +1,5 @@
+[简体中文](./README-cn.md) | English
+
 # gin-auto-redoc
 
 A Go package to automatically register Redoc documentation for Gin applications.
@@ -9,6 +11,7 @@ go get github.com/hargeek/gin-auto-redoc
 ```
 
 ## Usage
+
 Import the package in your main file
 
 ```go
