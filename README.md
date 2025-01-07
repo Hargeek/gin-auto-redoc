@@ -1,4 +1,4 @@
-[简体中文](./README-cn.md) | English
+English | [简体中文](./README-cn.md) 
 
 # gin-auto-redoc
 
