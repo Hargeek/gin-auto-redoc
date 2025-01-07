@@ -40,7 +40,7 @@ func main() {
 
 ## Configuration
 
-You can set custom configuration by calling SetConfig before registering the middleware
+By default, the Swagger Documentation is available at /api/v1/swagger and Redoc documentation is available at /api/v1/doc. To customize these paths, call SetConfig with your desired configuration before registering the middleware.
 
 ```go
 ginautodoc.SetConfig(ginautodoc.Config{
@@ -48,3 +48,7 @@ ginautodoc.SetConfig(ginautodoc.Config{
 })
 ginautodoc.Register(r)
 ```
+
+## Accessing Redoc
+
+Once you have started your Gin application, you can access the Redoc documentation at `http://localhost:<port>/api/v1/doc/index.html`

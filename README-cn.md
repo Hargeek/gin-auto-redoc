@@ -40,7 +40,7 @@ func main() {
 
 ## 配置
 
-可以在注册中间件之前调用 SetConfig 来设置自定义配置
+默认情况下，Swagger 文档位于 /api/v1/swagger，Redoc 文档位于 /api/v1/doc。要自定义这些路径，请在注册中间件之前使用所需的配置调用 SetConfig
 
 ```go
 ginautodoc.SetConfig(ginautodoc.Config{
@@ -48,3 +48,7 @@ ginautodoc.SetConfig(ginautodoc.Config{
 })
 ginautodoc.Register(r)
 ```
+
+## 访问 Redoc
+
+启动 Gin 应用程序后，在 `http://localhost:<port>/api/v1/doc/index.html` 访问 Redoc 文档
