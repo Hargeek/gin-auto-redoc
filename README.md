@@ -5,6 +5,7 @@ English | [简体中文](./README-cn.md)
 A Go package to automatically register Redoc documentation for a Gin application that already includes Swagger documentation
 
 ![Go Version](https://img.shields.io/badge/Go-%3E%3D%201.22-%23007d9c)
+![Gin Version](https://img.shields.io/badge/Gin-%3E%3D1.10-green)
 [![GoDoc](https://godoc.org/github.com/hargeek/gin-auto-redoc?status.svg)](https://pkg.go.dev/github.com/hargeek/gin-auto-redoc)
 [![Contributors](https://img.shields.io/github/contributors/hargeek/gin-auto-redoc)](https://github.com/hargeek/gin-auto-redoc/graphs/contributors)
 [![License](https://img.shields.io/github/license/hargeek/gin-auto-redoc)](./LICENSE)
