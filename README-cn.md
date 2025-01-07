@@ -4,6 +4,11 @@
 
 用于自动为 Gin 应用程序注册 Redoc 文档的 Go 包
 
+![Go Version](https://img.shields.io/badge/Go-%3E%3D%201.22-%23007d9c)
+[![GoDoc](https://godoc.org/github.com/hargeek/gin-auto-redoc?status.svg)](https://pkg.go.dev/github.com/hargeek/gin-auto-redoc)
+[![Contributors](https://img.shields.io/github/contributors/hargeek/gin-auto-redoc)](https://github.com/hargeek/gin-auto-redoc/graphs/contributors)
+[![License](https://img.shields.io/github/license/hargeek/gin-auto-redoc)](./LICENSE)
+
 ## 安装
 
 ```bash
