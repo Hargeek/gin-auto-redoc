@@ -28,7 +28,7 @@ import "github.com/hargeek/gin-auto-redoc"
 
 ```go
 import (
-    _ "github.com/hargeek/gin-auto-redoc"
+    ginautodoc "github.com/hargeek/gin-auto-redoc"
     "github.com/gin-gonic/gin"
 )
 
