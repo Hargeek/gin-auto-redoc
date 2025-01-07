@@ -10,7 +10,7 @@ import (
 )
 
 func Register(engine *gin.Engine) {
-	swaggerJSONPath := path.Join(globalConfig.SwaggerPath, "swagger.json")
+	swaggerJSONPath := path.Join(globalConfig.SwaggerPath, "doc.json")
 	redocPath := strings.Replace(globalConfig.SwaggerPath, "swagger", "doc", 1)
 	registerRedoc(engine, swaggerJSONPath, redocPath)
 }
