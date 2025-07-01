@@ -27,8 +27,14 @@ func handleRedoc(c *gin.Context, swaggerJSONPath string) {
 		return
 	}
 
-	suffix := c.Request.URL.Path[i+1:]
+	suffix := c.Request.URL.Path[i+1:] // get the suffix after the last slash
 	if suffix == "index.html" {
+		// if request path by reverse proxy and use rewrite rule, need to get the X-Forwarded-Prefix header for correct spec URL
+		xForwardedPrefix := c.Request.Header.Get("X-Forwarded-Prefix")
+		specUrl := swaggerJSONPath
+		if c.Request.Header.Get("X-Forwarded-Prefix") != "" {
+			specUrl = path.Join(xForwardedPrefix, swaggerJSONPath)
+		}
 		redocHTML := fmt.Sprintf(`<!DOCTYPE html>
         <html>
           <head>
@@ -47,7 +53,7 @@ func handleRedoc(c *gin.Context, swaggerJSONPath string) {
             <redoc spec-url='%s'></redoc>
             <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"></script>
           </body>
-        </html>`, swaggerJSONPath)
+        </html>`, specUrl)
 
 		c.Header("Content-Type", "text/html")
 		c.String(http.StatusOK, redocHTML)

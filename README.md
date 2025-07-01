@@ -41,6 +41,8 @@ func main() {
 
 ## Configuration
 
+### Customize Swagger Route
+
 By default, the Swagger Documentation is available at /api/v1/swagger and Redoc documentation is available at /api/v1/doc. To customize these paths, call SetConfig with your desired configuration before registering the middleware.
 
 ```go
@@ -48,6 +50,47 @@ ginautodoc.SetConfig(ginautodoc.Config{
     SwaggerPath: "/custom/swagger",
 })
 ginautodoc.Register(r)
+```
+
+### Reverse Proxy
+
+If your documentation is served through a reverse proxy and the path is rewritten, you need to pass the X-Forwarded-Prefix header to the service, otherwise you will not be able to access it, for example
+
+- nginx configuration example:
+
+```nginx
+location /custom_prefix/ {```
+    proxy_pass http://localhost:8080;
+    proxy_set_header X-Forwarded-Prefix "/custom_prefix";
+}
+```
+
+- Kubernetes ingress configuration example:
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      proxy_set_header X-Forwarded-Proto $http_x_forwarded_proto;
+      proxy_set_header X-Forwarded-Prefix "/custom_prefix";
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: example.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: api-service
+            port:
+              number: 8080
+        path: /custom_prefix/(.*)$
+        pathType: Prefix
 ```
 
 ## Accessing Redoc
