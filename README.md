@@ -18,13 +18,7 @@ go get github.com/hargeek/gin-auto-redoc
 
 ## Usage
 
-Import the package in your main file
-
-```go
-import _ "github.com/hargeek/gin-auto-redoc"
-```
-
-Register the Redoc middleware in your Gin application
+Register the Redoc route in your Gin application
 
 ```go
 import (

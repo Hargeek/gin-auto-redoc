@@ -20,11 +20,7 @@ go get github.com/hargeek/gin-auto-redoc
 
 在主文件中导入该包
 
-```go
-import "github.com/hargeek/gin-auto-redoc"
-```
-
-在 Gin 应用程序中注册 Redoc 中间件
+在 Gin 应用程序中注册 Redoc 路由
 
 ```go
 import (
