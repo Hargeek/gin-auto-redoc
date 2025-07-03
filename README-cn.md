@@ -2,7 +2,7 @@
 
 # gin-auto-redoc
 
-用于自动为已包含 Swagger 文档的 Gin 应用程序注册 Redoc 文档的 Go 包
+为已集成 Swagger (OpenAPI) 文档的 Gin 应用程序自动注册 Redoc API接口文档的 Go 包
 
 ![Go Version](https://img.shields.io/badge/Go-%3E%3D%201.22-%23007d9c)
 ![Gin Version](https://img.shields.io/badge/Gin-%3E%3D1.10-green)
@@ -92,3 +92,5 @@ spec:
 ## 访问 Redoc
 
 启动 Gin 应用程序后，在 `http://localhost:<port>/api/v1/doc/index.html` 访问 Redoc 文档
+
+![redoc-preview](./redoc-preview.png)

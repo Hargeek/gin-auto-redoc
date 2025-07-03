@@ -2,7 +2,7 @@ English | [简体中文](./README-cn.md)
 
 # gin-auto-redoc
 
-A Go package to automatically register Redoc documentation for a Gin application that already includes Swagger documentation
+A Go package for automatically registering Redoc API documentation pages for your Gin applications with Swagger (OpenAPI) documentation
 
 ![Go Version](https://img.shields.io/badge/Go-%3E%3D%201.22-%23007d9c)
 ![Gin Version](https://img.shields.io/badge/Gin-%3E%3D1.10-green)
@@ -90,3 +90,5 @@ spec:
 ## Accessing Redoc
 
 Once you have started your Gin application, you can access the Redoc documentation at `http://localhost:<port>/api/v1/doc/index.html`
+
+![redoc-preview](./redoc-preview.png)
